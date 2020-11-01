@@ -6,7 +6,22 @@ class PokemonForm extends React.Component {
     return (
       <div>
         <h3>Add a Pokemon!</h3>
-        <Form onSubmit={() => {console.log("submitting form...")}}>
+        <Form onSubmit={(e) => {
+          e.preventDefault()
+          
+      let object = {
+        name:e.target[0].value,
+        hp:e.target[1].value,
+        sprites:{
+          front:e.target[2].value,
+          back:e.target[3].value
+        }
+      }
+      console.log(object)
+    
+
+
+          this.props.submitHandler(object)}}>
           <Form.Group widths="equal">
             <Form.Input fluid label="Name" placeholder="Name" name="name" />
             <Form.Input fluid label="hp" placeholder="hp" name="hp" />

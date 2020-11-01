@@ -6,6 +6,9 @@ class PokemonCollection extends React.Component {
   render() {
     return (
       <Card.Group itemsPerRow={6}>
+        {this.props.stashPokemon.map((p)=>{
+          return <PokemonCard pokemon={p}/>
+        })}
         <h1>Hello From Pokemon Collection</h1>
       </Card.Group>
     )
